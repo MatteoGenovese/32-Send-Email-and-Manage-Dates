@@ -1,6 +1,6 @@
 import datetime
 import smtplib
-import password
+from data import password
 import random
 
 now = datetime.datetime.now()
@@ -21,7 +21,7 @@ def sendquote(quoteToSend):
 
 # On tuesday, send quote to a provided email
 if day_of_week == 1:
-    with open("quotes.txt") as quotes_file:
+    with open("data/quotes.txt") as quotes_file:
         quotesFile = quotes_file.readlines()
         quote = random.choice(quotesFile)
         sendquote(quote)
